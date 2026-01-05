@@ -13,6 +13,25 @@
 
 <br>
 
+## サンプル
+
+作成した内容は画像として保存可能
+
+### 編集画面（PC）
+<p align="center">
+  <img src="./assets/sample_pc_01.png" width="460" />
+  <img src="./assets/sample_pc_02.png" width="460" />
+</p>
+
+### モバイル表示
+<p align="center">
+  <img src="./assets/sample_m_01.png" width="260" />
+  <img src="./assets/sample_m_02.png" width="260" />
+  <img src="./assets/sample_m_03.png" width="260" />
+</p>
+
+<br>
+
 ## 特徴
 
 ### 👥 関係性ベースの趣味可視化
