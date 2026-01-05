@@ -12,7 +12,7 @@ const state = {
   userProfiles: Array.from({ length: USER_SLOT_COUNT }, (_, index) => ({
     id: index + 1,
     nickname: "",
-    titlePos: "bottom",
+    titlePos: "top",
     prefImages: [],
   })),
 };
@@ -733,4 +733,5 @@ updatePreviewScale();
 window.prefCaptureInvalidate = prefCaptureInvalidate;
 window.prefCaptureSchedule = prefCaptureSchedule;
 window.buildPreviewCaptureCache = buildPreviewCaptureCache;
+
 window.downloadPreviewPng = downloadPreviewPng;
