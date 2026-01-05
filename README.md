@@ -30,13 +30,13 @@
 ### モバイル画面
 <p align="center">
   <a href="https://raw.githubusercontent.com/oorthing/taste-map-maker/main/assets/sample_m_01.png">
-    <img src="./assets/sample_m_01.png" width="320" />
+    <img src="./assets/sample_m_01.png" width="280" />
   </a>
   <a href="https://raw.githubusercontent.com/oorthing/taste-map-maker/main/assets/sample_m_02.png">
-    <img src="./assets/sample_m_02.png" width="320" />
+    <img src="./assets/sample_m_02.png" width="280" />
   </a>
   <a href="https://raw.githubusercontent.com/oorthing/taste-map-maker/main/assets/sample_m_03.png">
-    <img src="./assets/sample_m_03.png" width="320" />
+    <img src="./assets/sample_m_03.png" width="280" />
   </a>
 </p>
 
