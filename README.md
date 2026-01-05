@@ -17,17 +17,27 @@
 
 作成した内容は画像として保存可能
 
-### 編集画面（PC）
+### PC画面
 <p align="center">
-  <img src="./assets/sample_pc_01.png" width="460" />
-  <img src="./assets/sample_pc_02.png" width="460" />
+  <a href="https://raw.githubusercontent.com/oorthing/taste-map-maker/main/assets/sample_pc_01.png">
+    <img src="./assets/sample_pc_01.png" width="460" />
+  </a>
+  <a href="https://raw.githubusercontent.com/oorthing/taste-map-maker/main/assets/sample_pc_02.png">
+    <img src="./assets/sample_pc_02.png" width="460" />
+  </a>
 </p>
 
-### モバイル表示
+### モバイル画面
 <p align="center">
-  <img src="./assets/sample_m_01.png" width="260" />
-  <img src="./assets/sample_m_02.png" width="260" />
-  <img src="./assets/sample_m_03.png" width="260" />
+  <a href="https://raw.githubusercontent.com/oorthing/taste-map-maker/main/assets/sample_m_01.png">
+    <img src="./assets/sample_m_01.png" width="320" />
+  </a>
+  <a href="https://raw.githubusercontent.com/oorthing/taste-map-maker/main/assets/sample_m_02.png">
+    <img src="./assets/sample_m_02.png" width="320" />
+  </a>
+  <a href="https://raw.githubusercontent.com/oorthing/taste-map-maker/main/assets/sample_m_03.png">
+    <img src="./assets/sample_m_03.png" width="320" />
+  </a>
 </p>
 
 <br>
