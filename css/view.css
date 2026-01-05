@@ -1,0 +1,112 @@
+@charset "utf-8";
+
+body {background-color: #fbfcff; font-family: "Pretendard Variable", Pretendard;}
+main {display: flex; gap: 24px; align-items: flex-start; width: min(1280px, calc(100% - 40px)); margin: 0 auto;}
+
+:root {--canvas: 900px;}
+
+.editor_panel {flex: 1 1 0;}
+.preview_panel {flex: 1 1 0;}
+.preview_panel .preview_viewport {display: flex; align-items: center; justify-content: center; aspect-ratio: 1 / 1; width: 100%; border-radius: 10px; background: #fff; box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .07); overflow: hidden;}
+.preview_panel .preview_scale {width: var(--canvas); height: var(--canvas);}
+.preview_panel .content {position: relative; width: var(--canvas); height: var(--canvas);}
+.preview_panel .content .pref_title {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #111; font-size: 30px; font-weight: 700; text-align: center;}
+.preview_panel .content .pref_title > span {display: block; line-height: 1.2;}
+
+#container {display: flex; justify-content: center; align-items: center;}
+#previewPref {position: absolute; inset: 0;}
+
+.bg_circle {position: absolute; width: 550px; height: 550px; border-radius: 50%; background: rgba(0, 0, 0, 0.085); z-index: 1;}
+.bg_circle.circle01 {top: -28%; left: 50%; transform: translateX(-50%);}
+.bg_circle.circle02 {top: 8.5%; left: 66%;}
+.bg_circle.circle03 {top: 65%; right: -8.5%;}
+.bg_circle.circle04 {top: 65%; left: -8.5%;}
+.bg_circle.circle05 {top: 8.5%; left: -27%;}
+
+.circle_area {display: flex; flex-direction: column; gap: 40px; position: absolute; z-index: 3;}
+.circle_area.area_top {top: 5%; left: 36%;}
+.circle_area.area_right {top: 25%; right: 5%;}
+.circle_area.area_bottom01 {bottom: 5%; right: 11%;}
+.circle_area.area_bottom02 {bottom: 5%; left: 11%;}
+.circle_area.area_left {top: 25%; left: 5%;}
+.circle_area.area_right .circle_grid,
+.circle_area.area_left .circle_grid {grid-template-columns: repeat(2, 1fr);}
+.circle_area .circle {position: relative; display: flex;}
+.circle_area .circle_grid {display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;}
+.circle_area .circle_grid .circle_item {position: relative; width: 80px; height: 80px; background-color: #fff;}
+.circle_area .circle_grid .circle_item img {width: 100%; height: 100%; object-fit: cover;}
+.circle_area[data-user="1"] {flex-direction: column-reverse;}
+.circle_area[data-user="2"],
+.circle_area[data-user="5"] {display: flex; flex-direction: row; align-items: center;}
+.circle_area[data-user="2"] .user_area,
+.circle_area[data-user="5"] .user_area {position: relative; width: 80px; flex-shrink: 0; transform: translateY(65px);}
+.circle_area[data-user="2"] .circle,
+.circle_area[data-user="5"] .circle {flex: 1;}     
+.circle_area[data-user="5"] {flex-direction: row-reverse;}
+.circle_area[data-user="3"] .user_area {transform: translateX(-85px);}
+.circle_area[data-user="4"] .user_area {transform: translateX(85px);}
+
+.user_area {position: relative; width: 100%; height: 80px;}
+.user_area .user_title {position: absolute; left: 50%; transform: translateX(-50%); max-width: 150px; height: 20px; font-size: 16px; font-weight: bold; line-height: 1.2; text-align: center; white-space: nowrap; text-overflow: clip; overflow: hidden;}
+.user_area .user_icon {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; border: 2px solid #444; border-radius: 50%; background-color: #fff;}
+.user_area .user_icon img {display: block; width: 100%; height: 100%; border-radius: 50%; object-fit: cover; box-sizing: border-box;}
+.user_area.title_top .user_title {bottom: 90px;}
+.user_area.title_bottom .user_title {top: 90px;}
+
+.empty_q {display: flex; align-items: center; justify-content: center; position: absolute; inset: 0; color: #111; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; font-size: 22px; font-weight: 800; line-height: 1;}
+.user_icon.has_img .empty_q,
+.circle_item.has_img .empty_q { 
+  display: none; 
+}
+.user_icon img:not([src]),
+.user_icon img[src=""],
+.circle_item img:not([src]),
+.circle_item img[src=""] {
+  display: none;
+}
+
+@media (min-width: 1025px) {
+  body {
+    overflow-x: auto;
+  }
+
+  main {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    width: 1280px;
+    margin: 45px auto;
+  }
+
+  .preview_panel {
+    flex: 0 0 900px;
+    width: 900px;
+  }
+
+  .editor_panel {
+    flex: 0 0 360px;
+    width: 360px;
+  }
+}
+
+@media (max-width: 1024px) {
+  main {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+    margin: 0;
+  }
+
+  .preview_panel,
+  .editor_panel {
+    max-width: 100%;
+    padding: 15px 15px; 
+  }
+
+  .editor_panel {
+    order: 2;
+    height: auto;
+    overflow: visible;
+  }
+}

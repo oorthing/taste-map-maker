@@ -1,0 +1,147 @@
+@charset "utf-8";
+
+body {font-family: "Pretendard Variable", Pretendard;}
+button {margin: 0; padding: 0; border: none; background: none; cursor: pointer;}
+
+.editor_panel .editor_wrap {padding: 15px 15px; border-radius: 10px; background: #fff; box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .07);}
+
+.user_tab {display: grid; overflow: hidden;}
+.user_tab_menu {display: flex; flex-direction: row; margin-bottom: 10px;}
+.user_tab_menu .btn_tab {width: calc(100% - 5px); height: 35px; margin-right: 5px; border: 1px solid #ccc; border-radius: 20px; font-size: 16px; box-sizing: border-box;}
+.user_tab_menu .btn_tab.selected {background: #a0b5e7; color: #fff; font-weight: bold;}
+.user_tab_menu .btn_tab:last-child {margin-right: 0;}
+
+.user_tab_content {grid-area: 1 / 1; transform: translateY(10px); transition: opacity 0.25s ease, transform 0.25s ease; opacity: 0; pointer-events: none; visibility: hidden;}
+.user_tab_content.selected {opacity: 1; transform: translateY(0); pointer-events: auto; visibility: visible; z-index: 1;}
+
+.user_info {padding: 15px 0; background: transparent;}
+.user_info:last-child {padding-bottom: 0;}
+.user_info .edit_title {margin-bottom: 10px; color: #111; font-size: 16px; font-weight: bold;}
+.user_info .btn_pos {width: 45px; height: 29px; border: 1px solid #ccc; border-radius: 20px; font-size: 12px; vertical-align: middle;}
+.user_info .btn_pos.selected {background-color: #a0b5e7; color: #fff;}
+.user_info .nickname_input {display: inline-block; width: calc(100% - 99px); padding: 5px 10px; border: 2px solid #dddddd; border-radius: 50px; box-sizing: border-box; overflow: hidden;}
+.user_info .nick_pos {display: inline-block;}
+.user_info .thumb_box .thumb_grid {display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;}
+.user_info .thumb_box .thumb {position: relative; display: flex; align-items: center; justify-content: center; aspect-ratio: 1 / 1; border: 2px solid #dddddd; border-radius: 8px; overflow: hidden;}
+.user_info .thumb_box .thumb::after {position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0); transition: background 0.35s ease; content: ""; pointer-events: none; z-index: 1;}
+.user_info .thumb_box .thumb.preview_image:hover::after {background: rgba(0, 0, 0, 0.4);}
+.user_info .thumb_box .thumb img {position: relative; width: 100%; height: 100%; object-fit: cover; border-radius: 6px; z-index: 0;}
+.user_info .thumb_box .btn_upload {width: 100%; height: 100%; color: #dddddd; font-size: 20px; cursor: pointer;}
+.user_info .thumb_box .btn_cancel {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #fff; font-size: 20px; opacity: 0; transition: opacity 0.35s ease; cursor: pointer; z-index: 2;}
+.user_info .thumb_box .thumb.preview_image:hover .btn_cancel {opacity: 1;}
+
+.pref_menu {display: flex; justify-content: flex-end; gap: 8px; margin-top: 20px;}
+.pref_menu .btn_download {width: 80px; height: 35px; padding: 0 12px; background: #b3b3b3; border: 1px solid #838383; border-radius: 20px; color: #fff; font-weight: bold;font-size: 12px; line-height: 30px; text-align: center;}
+.pref_menu .btn_download:hover {background-color: #797979;}
+
+@media (hover: hover) and (pointer: fine) {
+    .user_tab_menu .btn_tab:hover {
+      background-color: #fbfcff;
+    }
+
+    .user_tab_menu .btn_tab.selected:hover {
+      background-color: #7a97db;
+    }
+
+    .user_tab_menu .btn_tab {
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .user_tab_menu .btn_tab.selected {
+      background: #a0b5e7;
+      border-color: #84a1e5;
+      color: #fff;
+      font-weight: bold;
+    }
+}
+
+@media (max-width: 1024px) {
+  .editor_panel {
+    --ed-pad: clamp(12px, 2.5vw, 20px);
+    --ed-font: clamp(12px, 1.6vw, 14px);
+    --ed-title: clamp(16px, 2vw, 16px);
+    --ep-btn: clamp(28px, 4vw, 34px);
+    --ep-radius: 16px;
+    flex: 0 0 auto;
+    padding-bottom: env(safe-area-inset-bottom);
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .editor_panel .editor_wrap {
+    padding: var(--ed-pad);
+  }
+
+  .user_tab {
+    overflow: visible;
+  }
+
+  .user_info {
+    padding: var(--ed-pad) 0;
+  }
+
+  .user_info .info_title {
+    font-size: var(--ed-title);
+  }
+
+  .user_info .sub,
+  .user_info .pos_txt,
+  .user_info .btn_pos,
+  .user_tab_menu .btn_tab {
+    font-size: var(--ed-font);
+  }
+
+  .user_tab_menu {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .user_tab_menu .btn_tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    height: 36px;
+    margin-right: 0;
+    padding: 0 12px;
+  }
+
+  .user_info .thumb_box .thumb_grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: clamp(10px, 1.2vw, 10px);
+  }
+
+  .user_info .thumb_box .thumb {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+@media (max-width: 720px) {
+  .user_info .thumb_box .thumb_grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .user_info .thumb_box .thumb_grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+  }
+
+  .user_info .thumb_box .thumb {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+  }
+
+  .user_info .btn_pos,
+  .user_tab_menu .btn_tab {
+      font-size: 12px;
+  }
+}
