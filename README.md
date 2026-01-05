@@ -4,8 +4,8 @@
 
 これまで画像編集ツールで手作業していた「趣味共有用の図」を、Web 上で直感的に編集・保存できる形にすることを目的として開発しました。
 
-👉 **デモページ**：https://taste-map-maker.vercel.app  
-👉 **GitHub リポジトリ**：https://github.com/oorthing/taste-map-maker
+🔗 **デモページ**：https://taste-map-maker.vercel.app  
+🔗 **GitHub リポジトリ**：https://github.com/oorthing/taste-map-maker
 
 <br>
 
